@@ -15,9 +15,14 @@ public class ListasTareas {
         System.out.println("Crear nueva lista de tareas");
         System.out.print("Ingresa el nombre de la lista de tareas: ");
         String nombreLista = lector.leerCadena();
-        ListaTareas nuevaLista = new ListaTareas(nombreLista);
+        System.out.print("Cadena: ");
+        int numeroLista = lector.leerOpcion();
+
+        String nombreCompletoLista = nombreLista + " " + numeroLista;
+        ListaTareas nuevaLista = new ListaTareas(nombreCompletoLista);
         listasTareas.add(nuevaLista);
-        System.out.println("Lista de tareas creada con éxito: " + nombreLista);
+
+        System.out.println("Lista de tareas creada con éxito: " + nombreCompletoLista);
     }
     public void verListaTareas() {
         System.out.println("Ver listas de tareas.");
