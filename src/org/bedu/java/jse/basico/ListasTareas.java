@@ -12,10 +12,12 @@ public class ListasTareas {
     private List<ListaTareas> listasTareas = new ArrayList<>();
     private static final String NOMBRE_ARCHIVO = System.getProperty("user.home") + "/.tareas";
     public void crearNuevaLista() {
-        System.out.println("Crear nueva lista de tareas.");
-        String nombre = lector.leerCadena();
-        ListaTareas lista = new ListaTareas(nombre);
-        listasTareas.add(lista);
+        System.out.println("Crear nueva lista de tareas");
+        System.out.print("Ingresa el nombre de la lista de tareas: ");
+        String nombreLista = lector.leerCadena();
+        ListaTareas nuevaLista = new ListaTareas(nombreLista);
+        listasTareas.add(nuevaLista);
+        System.out.println("Lista de tareas creada con éxito: " + nombreLista);
     }
     public void verListaTareas() {
         System.out.println("Ver listas de tareas.");
